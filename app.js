@@ -72,6 +72,7 @@ app.use((req,res,next)=>{
     return next()
 })
 app.use("/listing",listings)
+app.use("/",listings)
 app.use("/user",userRouter)
 app.listen(port,()=>{
     console.log(port)
@@ -82,10 +83,6 @@ main().then((res)=>{
 }).catch((err)=>{
     // console.log("There's some shit in the fucking code")
     console.log(err)
-})
-app.get("/",(req,res)=>{
-    res.cookie("project","wonderlust")
-    res.send("Port is active")
 })
 app.get("/err",(req,res)=>{
     abc=abc
