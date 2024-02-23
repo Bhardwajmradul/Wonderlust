@@ -3,7 +3,6 @@ const Listing=require("../models/listing")
 const review=require("../models/review")
 const user=require("../models/user")
 const data=require("./data")
-const { de } = require('@faker-js/faker')
 const dburl=process.env.url
 async function main(){
     await mongoose.connect(dburl)

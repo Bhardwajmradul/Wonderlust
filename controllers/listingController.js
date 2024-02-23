@@ -16,7 +16,7 @@ module.exports.addListing=async (req,res)=>{
     data=new Listing(listing)
     await add(data)
     req.flash("success","New listing is created")
-    res.redirect("http://localhost:8080/listing",)
+    res.redirect("/listing",)
 }
 module.exports.showSingalListingById=async (req,res)=>{
     let {id}=req.params
@@ -48,7 +48,7 @@ module.exports.updateListing=async(req,res)=>{
     let data={title,description,price,location,country,image}
     await update(data,id)
     req.flash("success",`${title} is updated successfully`)
-    res.redirect("http://localhost:8080/listing")   
+    res.redirect("/listing")   
 }
 module.exports.updateListingForm=async(req,res)=>{
     let {id}=req.params
@@ -69,10 +69,10 @@ module.exports.deleteListing=async(req,res)=>{
     if(listing.ownerId.id==req.user.id){
         await Listing.findByIdAndDelete(id)
         req.flash("success","Listing deletion successfull")
-        res.redirect("http://localhost:8080/listing")
+        res.redirect("/listing")
     }
     else{
         req.flash("error",`You are "${req.user.username}" but this listing is owned by "${listing.ownerId.username}"`)
-        res.redirect(`http://localhost:8080/listing/${id}`)
+        res.redirect(`/listing/${id}`)
     }
 }

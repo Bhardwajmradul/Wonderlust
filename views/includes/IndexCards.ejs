@@ -1,8 +1,8 @@
 <div class="card col listing-card" style="width: 20rem;">
-    <a href="http://localhost:8080/listing/<%= listing.id %>">
+    <a href="/listing/<%= listing.id %>">
     <img src="<%= listing.image.url %>" class="card-img-top" alt="<%=listing.title%>" style="height: 20rem; margin-bottom: 1rem;">
     <div class="card-body">
-        <h5 class="card-title"><a href="http://localhost:8080/listing/<%= listing.id %>"><%=listing.title%></a></h5>
+        <h5 class="card-title"><a href="/listing/<%= listing.id %>"><%=listing.title%></a></h5>
         <p class="card-text">&#8377 <%= listing.price.toLocaleString("en-IN") %> / night</p>
     </div>
     </a>
