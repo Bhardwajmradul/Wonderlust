@@ -1,0 +1,35 @@
+<%- layout ("layouts/boilerplate.ejs") %>
+
+<form action="http://localhost:8080/user/signup" method="post" novalidate class="needs-validation">
+
+    <div class="row">
+        <h1 class="col-6 offset-2">Signup with WonderLust!!</h1>
+        <div class="col-6 offset-3">
+            <br><br>
+            <div class="mb-3">
+                <label class="form-label" for="username"> Username :</label>
+                <input placeholder="Enter your username" class="form-control" name='user[username]' type="text" value=""
+                    required>
+                <div class="valid-feedback">username looks good</div>
+                <div class="invalid-feedback">Please enter your username</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="email"> Email-Id :</label>
+                <input class="form-control" name='user[email]' type="text" value="" placeholder="Enter your email-id"
+                    required>
+                <div class="invalid-feedback">Please enter a vaild email-id</div>
+                <div class="valid-feedback">Email-Id looks good</div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="password"> Password :</label>
+                <input placeholder="Create a strong password" class="form-control" name='user[password]' type="text"
+                    value="" required>
+                <div class="invalid-feedback">Give a valid password</div>
+                <div class="valid-feedback">Strong password</div>
+            </div>
+            <br><br>
+            <button class="btn btn-dark" type="submit">Submit</a></button>
+        </div>
+    </div>
+</form>

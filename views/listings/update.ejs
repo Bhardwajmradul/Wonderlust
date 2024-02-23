@@ -1,0 +1,55 @@
+<%- layout ("layouts/boilerplate.ejs") %>
+
+<body>
+    <form action="http://localhost:8080/listing/update/<%= data.id %>" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-8">
+                <div class="mb-3">
+                    <label class="form-label" for="title"> Title :</label>
+                    <input placeholder="Add a catchy title" class="form-control" name="title" type="text"
+                        value="<%= data.title %>" required>
+                    <div class="valid-feedback">Title looks good</div>
+                    <div class="invalid-feedback">Give a title to the property</div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="description"> Description :</label>
+                    <textarea class="form-control" name="description" type="text"required><%= data.description %></textarea>
+                    <div class="invalid-feedback">Give some discription of the property</div>
+                    <div class="valid-feedback">Description looks good</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price"> Price :</label>
+                    <input placeholder="Add price" class="form-control" name="price" type="text" value="<%= data.price %>"required>
+                    <div class="invalid-feedback">Give a valid price</div>
+                    <div class="valid-feedback">Valid price</div>
+                </div>
+                <div class="mb-3">
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="form-label" for="location"> Location :</label>
+                            <input placeholder="Location" class="form-control" name="location" type="text"
+                                value="<%= data.location %>" required>
+                            <div class="invalid-feedback">Give the correct location</div>
+                        </div>
+                        <div class="col-5">
+                            <label class="form-label" for="country"> Country :</label>
+                            <input placeholder="Country" class="form-control" name="country" type="text"
+                                value="<%= data.country %>" required>
+                            <div class="invalid-feedback">Country name should be valid</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    Original Image :<br><br>
+                    <img src="<%= url %>" style="height: 200px;width: 200px;">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="url"> Image Url :</label>
+                    <input placeholder="Add the image" class="form-control" name="listing[image][url]" type="file"
+                        value="<%= data.image.url %>"></div>
+            </div>
+        </div><br><br>
+        <button class="btn btn-dark" type="submit">Submit</a></button>
+    </form>
+</body>
